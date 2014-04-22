@@ -5,12 +5,12 @@
 2. The function responsible for this is the GetPlayerName() function. 
 ###Question Two:
 1. How will you ensure that the user is asked for the name repeatedly?
-2. I will add a Validity loop that will not end until a correct input is recieved.
+2. I will add a Validity loop that will not end until a correct input is received.
 ###Question Three:
 1. What additional variable will you need and what will its datatype be?
 2. A variable named Valid; it will be a boolean.
 
-###Write the function metioned in PsudoCode;
+###Write the function mentioned in PsudoCode;
   
 Try Then
 Function GetPlayerName()
@@ -38,7 +38,7 @@ END Function
 2. datetime (import datetime)
 ###Question Two:
 1. Identify the four functions that will require changes.
-2. 
+2. ResetRecentScores() , DisplayRecentScores() , UpdateRecentScores() , TRecentScores()
 ###Question Three:
 1. How do you convert a string in the format DD/MM/YY (e.g. 14/08/93) to a date type in Python?
-2. 
+2. datetime.date.strfdate
