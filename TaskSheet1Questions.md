@@ -31,3 +31,14 @@ END Function
 ###Question One:
 1. Which function is responsible for adding scores to the table?
 2. The function responsible is UpdateRecentScores(RecentScores, Score)
+
+##Task 5 Questions
+###Question One:
+1. Which Module needs to be added?
+2. datetime (import datetime)
+###Question Two:
+1. Identify the four functions that will require changes.
+2. 
+###Question Three:
+1. How do you convert a string in the format DD/MM/YY (e.g. 14/08/93) to a date type in Python?
+2. 
