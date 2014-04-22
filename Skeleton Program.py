@@ -19,6 +19,7 @@ class TRecentScore():
   def __init__(self):
     self.Name = ''
     self.Score = 0
+    self.Date = ''
 
 Deck = [None]
 RecentScores = [None]
@@ -164,23 +165,25 @@ def ResetRecentScores(RecentScores):
   for Count in range(1, NO_OF_RECENT_SCORES + 1):
     RecentScores[Count].Name = ''
     RecentScores[Count].Score = 0
+    RecentScores[Count].Date = ''
 
 def DisplayRecentScores(RecentScores):
   print()
   print('Recent Scores: ')
   print()
-  print("{0:<10}{1}".format("Name","Score"))
-  print()  
-  for Count in range(1, NO_OF_RECENT_SCORES + 1):
-    print("{0:<10}{1}".format(RecentScores[Count].Name,RecentScores[Count].Score))
+  print("{0:<10}{1:<10}{2:<10}".format("Name","Score","Date"))
   print()
+  for Count in range(1, NO_OF_RECENT_SCORES + 1):
+    print("{0:<10}{1:<10}{2:<10}".format(RecentScores[Count].Name,RecentScores[Count].Score,RecentScores[Count].Date))
   print('Press the Enter key to return to the main menu')
   input()
   print()
 
 def UpdateRecentScores(RecentScores, Score):
   UpdateScore = input("Would you like your score to be saved to the resent scores board?: ")
-  if UpdateScore[0].lower() == "y":    
+  if UpdateScore[0].lower() == "y":
+    UnformattedDate = datetime.date.today()
+    CurrentDate = datetime.date.strftime(UnformattedDate, "%d/%m/%y")
     PlayerName = GetPlayerName()
     FoundSpace = False
     Count = 1
@@ -193,9 +196,11 @@ def UpdateRecentScores(RecentScores, Score):
       for Count in range(1, NO_OF_RECENT_SCORES):
         RecentScores[Count].Name = RecentScores[Count + 1].Name
         RecentScores[Count].Score = RecentScores[Count + 1].Score
+        RecentScores[Count].Date = RecentScores[Count + 1].Date
       Count = NO_OF_RECENT_SCORES
     RecentScores[Count].Name = PlayerName
     RecentScores[Count].Score = Score
+    RecentScores[Count].Date = CurrentDate
   else:
     print()
     print("You've not been added to the leaderboard. Returning you to the main menu.")
