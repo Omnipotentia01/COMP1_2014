@@ -41,4 +41,4 @@ END Function
 2. ResetRecentScores() , DisplayRecentScores() , UpdateRecentScores() , TRecentScores()
 ###Question Three:
 1. How do you convert a string in the format DD/MM/YY (e.g. 14/08/93) to a date type in Python?
-2. datetime.date.strfdate
+2. datetime.date.strftime
