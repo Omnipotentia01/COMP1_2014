@@ -175,6 +175,7 @@ def DisplayRecentScores(RecentScores):
   print()
   for Count in range(1, NO_OF_RECENT_SCORES + 1):
     print("{0:<10}{1:<10}{2:<10}".format(RecentScores[Count].Name,RecentScores[Count].Score,RecentScores[Count].Date))
+  print()
   print('Press the Enter key to return to the main menu')
   input()
   print()
