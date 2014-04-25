@@ -21,6 +21,10 @@ class TRecentScore():
     self.Score = 0
     self.Date = ''
 
+class TOptions():
+  def __init__(self):
+    self.AceHighOrLow = "low"
+
 Deck = [None]
 RecentScores = [None]
 Choice = ''
@@ -85,11 +89,11 @@ def GetMenuChoice():
   print()
   return Choice
 
-def DisplayOptions()
-  AceHighOrLow = Options.AceHighOrLow
-def GetOptionChoice()
-def SetOptions(OptionChoice)
-def SetAceHighOrLow()
+#def DisplayOptions()
+  #AceHighOrLow = Options.AceHighOrLow
+#def GetOptionChoice()
+#def SetOptions(OptionChoice)
+#def SetAceHighOrLow()
 
 def LoadDeck(Deck):
   CurrentFile = open('deck.txt', 'r')
