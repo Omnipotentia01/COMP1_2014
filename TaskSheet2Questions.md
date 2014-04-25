@@ -12,11 +12,11 @@
 
 ##Pseudo-Code
 	FUNCTION DisplayOptions()
-		Ace <- Options.Ace
+		AceHighOrLow <- Options.AceHighOrLow
 		OUTPUT ''
 		OUTPUT 'OPTIONS'
 		OUTPUT ''
-		OUTPUT '1. Ace: ', Ace
+		OUTPUT '1. Ace: ', AceHighOrLow
 		OUTPUT ''
 		OUTPUT 'Select an option or press q to quit: '
 	END FUNCTION
@@ -24,8 +24,8 @@
 	FUNCTION GetOptionChoice()
 		Choice <- INPUT ''
 		Choice <- CALL lower(Choice)
-		OUTPUT ''
 		Choice <- Choice[1]
+		OUTPUT ''
 		RETURN Choice
 	END FUNCTION
 
@@ -45,10 +45,10 @@
 			Choice <- CALL lower(Choice)
 			Choice <- Choice[1]
 			IF Choice = 'h' THEN
-				Options.Ace <- 'high'
+				Options.AceHighOrLow <- 'high'
 				Finished = TRUE
 			ELSE IF Choice <- 'l' THEN
-				Options.Ace <- 'low'
+				Options.AceHighOrLow <- 'low'
 				Finished = TRUE
 			ELSE
 				OUTPUT 'Please input a valid choice'
