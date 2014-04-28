@@ -89,11 +89,31 @@ def GetMenuChoice():
   print()
   return Choice
 
-#def DisplayOptions()
-  #AceHighOrLow = Options.AceHighOrLow
-#def GetOptionChoice()
-#def SetOptions(OptionChoice)
-#def SetAceHighOrLow()
+def DisplayOptions():
+  AceHighOrLow = Options.AceHighOrLow
+  print()
+  print("Options")
+  print()
+  print("1. Ace: {0}".format(AceHighOrLow))
+  print()
+  
+def GetOptionChoice():
+  Choice = input("Select an option from the menu (or enter q to quit): ")
+  Choice = Choice[0].lower()
+  print()
+  return Choice
+  
+def SetOptions(OptionChoice):
+  if OptionChoice == "1":
+    SetAceHighOrLow()
+  ##Uneeded validation
+##  else:
+##    print("Please select a valid option:")
+##    OptionChoice = GetOptionChoice()
+    
+def SetAceHighOrLow():
+  print()
+  print()
 
 def LoadDeck(Deck):
   CurrentFile = open('deck.txt', 'r')
