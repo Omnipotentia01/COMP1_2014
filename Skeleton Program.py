@@ -7,8 +7,11 @@
 
 import random
 import datetime
-
+import pdb
+pdb.set_trace()
 NO_OF_RECENT_SCORES = 3
+AceHigh = False
+AceHighInput = "Low"
 
 class TCard():
   def __init__(self):
@@ -21,42 +24,68 @@ class TRecentScore():
     self.Score = 0
     self.Date = ''
 
-class TOptions():
-  def __init__(self):
-    self.AceHighOrLow = "low"
-
 Deck = [None]
 RecentScores = [None]
 Choice = ''
 
 def GetRank(RankNo):
   Rank = ''
-  if RankNo == 1:
-    Rank = 'Ace'
-  elif RankNo == 2:
-    Rank = 'Two'
-  elif RankNo == 3:
-    Rank = 'Three'
-  elif RankNo == 4:
-    Rank = 'Four'
-  elif RankNo == 5:
-    Rank = 'Five'
-  elif RankNo == 6:
-    Rank = 'Six'
-  elif RankNo == 7:
-    Rank = 'Seven'
-  elif RankNo == 8:
-    Rank = 'Eight'
-  elif RankNo == 9:
-    Rank = 'Nine'
-  elif RankNo == 10:
-    Rank = 'Ten'
-  elif RankNo == 11:
-    Rank = 'Jack'
-  elif RankNo == 12:
-    Rank = 'Queen'
-  elif RankNo == 13:
-    Rank = 'King'
+  if AceHigh = False:
+    if RankNo == 1:
+      Rank = 'Ace'
+    elif RankNo == 2:
+      Rank = 'Two'
+    elif RankNo == 3:
+      Rank = 'Three'
+    elif RankNo == 4:
+      Rank = 'Four'
+    elif RankNo == 5:
+      Rank = 'Five'
+    elif RankNo == 6:
+      Rank = 'Six'
+    elif RankNo == 7:
+      Rank = 'Seven'
+    elif RankNo == 8:
+      Rank = 'Eight'
+    elif RankNo == 9:
+      Rank = 'Nine'
+    elif RankNo == 10:
+      Rank = 'Ten'
+    elif RankNo == 11:
+      Rank = 'Jack'
+    elif RankNo == 12:
+      Rank = 'Queen'
+    elif RankNo == 13:
+      Rank = 'King'
+  else:
+    if RankNo == 1:
+      Rank = 'Two'
+    elif RankNo == 2:
+      Rank = 'Two'
+    elif RankNo == 3:
+      Rank = 'Three'
+    elif RankNo == 4:
+      Rank = 'Four'
+    elif RankNo == 5:
+      Rank = 'Five'
+    elif RankNo == 6:
+      Rank = 'Six'
+    elif RankNo == 7:
+      Rank = 'Seven'
+    elif RankNo == 8:
+      Rank = 'Eight'
+    elif RankNo == 9:
+      Rank = 'Nine'
+    elif RankNo == 10:
+      Rank = 'Ten'
+    elif RankNo == 11:
+      Rank = 'Jack'
+    elif RankNo == 12:
+      Rank = 'Queen'
+    elif RankNo == 13:
+      Rank = 'King'
+    
+  
   return Rank
 
 def GetSuit(SuitNo):
@@ -90,11 +119,10 @@ def GetMenuChoice():
   return Choice
 
 def DisplayOptions():
-  AceHighOrLow = Options.AceHighOrLow
   print()
   print("Options")
   print()
-  print("1. Ace: {0}".format(AceHighOrLow))
+  print("1. Ace: {0}".format(AceHighInput))
   print()
   
 def GetOptionChoice():
@@ -105,14 +133,25 @@ def GetOptionChoice():
   
 def SetOptions(OptionChoice):
   if OptionChoice == "1":
-    SetAceHighOrLow()
-  ##Uneeded validation
-##  else:
-##    print("Please select a valid option:")
-##    OptionChoice = GetOptionChoice()
+    SetAceHigh()
+  else:
+    print("Please select a valid option:")
+    OptionChoice = GetOptionChoice()
     
-def SetAceHighOrLow():
+def SetAceHigh():
+  pdb.set_trace()
+  global AceHigh
+  global AceHighInput
   print()
+  while not (AceHighInput == "h" or AceHighInput == "l"):
+    AceHighInput = input("Would you like the ace to be (h)igh or (l)ow?: ")
+    AceHighInput = AceHighInput[0].lower()
+  if AceHighInput == "h":
+    AceHighInput = "High"
+    AceHigh = True
+  else:
+    AceHighInput = "Low"
+    AceHigh = False    
   print()
 
 def LoadDeck(Deck):
@@ -287,9 +326,9 @@ if __name__ == '__main__':
     elif Choice == '4':
       ResetRecentScores(RecentScores)
     elif Choice == '5':
-      DisplayOptions(Options)
+      DisplayOptions()
       OptionChoice = GetOptionChoice()
       Finished = False
       while OptionChoice != 'q' and not Finished:
-        SetOptions(OptionChoice,Options)
+        SetOptions(OptionChoice)
         Finished = True
