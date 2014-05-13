@@ -92,6 +92,8 @@ def SaveScores(RecentScores):
       saveScore.write(RecentScores[count].Name + "\n")
       saveScore.write((str(RecentScores[count].Score) + "\n"))
       saveScore.write((str(RecentScores[count].Date) + "\n"))
+
+def SaveState(Deck, NoOfCardsTurnedOver, HighOrLow):
       
 
 def LoadScores():
